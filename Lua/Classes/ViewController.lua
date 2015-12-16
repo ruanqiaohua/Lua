@@ -1,7 +1,23 @@
-waxClass{"ViewController", UIViewController}
+waxClass{"ViewController", UIViewController, protocols = {"UITableViewDataSource", "UITableViewDelegate"}}
 
 function viewDidLoad(self)
-view = UIView:initWithFrame(CGRect(0, 0, 320, 100))
-view:setBackgroundColor(UIColor:redColor())
 
+self.tableView = UITableView:initWithFrame_style(self:view():bounds(), UITableViewStylePlain)
+self.tableView:setDelegate(self)
+self.tableView:setDataSource(self)
+self.tableView:registerClass_forCellReuseIdentifier(UITableViewCell:class(), "cellIdentifier")
+self:view():addSubview(self.tableView)
+
+end
+
+-- UITabelViewDatasource
+
+function tableView_numberOfRowsInSection(self, tableView, section)
+    return 100
+end
+
+function tableView_cellForRowAtIndexPath(self, tableView, indexPath)
+    local cell = tableView:dequeueReusableCellWithIdentifier("cellIdentifier")
+    cell:textLabel():setText(string.format("%d",indexPath:row()))
+    return cell
 end

@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIImage *image;
+    [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tiegui.jpg"]];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

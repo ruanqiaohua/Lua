@@ -22,6 +22,7 @@
 		F1B5F38E1C20583A0085C307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B5F38C1C20583A0085C307 /* Main.storyboard */; };
 		F1B5F3901C20583A0085C307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B5F38F1C20583A0085C307 /* Assets.xcassets */; };
 		F1B5F3931C20583A0085C307 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B5F3911C20583A0085C307 /* LaunchScreen.storyboard */; };
+		F1D6CA271C2422A100FB6DCC /* tiegui.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F1D6CA261C2422A100FB6DCC /* tiegui.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		F1B5F38F1C20583A0085C307 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1B5F3921C20583A0085C307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1B5F3941C20583A0085C307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1D6CA261C2422A100FB6DCC /* tiegui.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tiegui.jpg; sourceTree = "<group>"; };
 		F502277E4E77577D08EA72FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 		F1B5F3821C20583A0085C307 /* Lua */ = {
 			isa = PBXGroup;
 			children = (
+				F1D6CA251C24229600FB6DCC /* imgs */,
 				1E72B1801C23E9CC00020C5D /* Classes */,
 				1E72B15B1C23DE9000020C5D /* ThirdClass */,
 				F1B5F3861C20583A0085C307 /* AppDelegate.h */,
@@ -172,6 +175,14 @@
 				F1B5F3841C20583A0085C307 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1D6CA251C24229600FB6DCC /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				F1D6CA261C2422A100FB6DCC /* tiegui.jpg */,
+			);
+			path = imgs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1D6CA271C2422A100FB6DCC /* tiegui.jpg in Resources */,
 				1E72B1841C23E9E700020C5D /* ViewController.lua in Resources */,
 				1E72B1831C23E9E700020C5D /* init.lua in Resources */,
 				F1B5F3931C20583A0085C307 /* LaunchScreen.storyboard in Resources */,

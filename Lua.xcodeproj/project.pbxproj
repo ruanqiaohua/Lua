@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E72B1611C23DF0E00020C5D /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1E72B1601C23DF0E00020C5D /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1E72B17A1C23DF5000020C5D /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E72B1721C23DF5000020C5D /* ioapi.c */; };
+		1E72B17B1C23DF5000020C5D /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E72B1741C23DF5000020C5D /* mztools.c */; };
+		1E72B17C1C23DF5000020C5D /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E72B1761C23DF5000020C5D /* unzip.c */; };
+		1E72B17D1C23DF5000020C5D /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E72B1781C23DF5000020C5D /* zip.c */; };
+		1E72B17F1C23DF6B00020C5D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E72B17E1C23DF6B00020C5D /* libz.tbd */; };
 		CF683A65CC3FCB3947508492 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D86C7918E28856D2DB18CF5 /* libPods.a */; };
 		F1B5F3851C20583A0085C307 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B5F3841C20583A0085C307 /* main.m */; };
 		F1B5F3881C20583A0085C307 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B5F3871C20583A0085C307 /* AppDelegate.m */; };
@@ -14,12 +20,23 @@
 		F1B5F38E1C20583A0085C307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B5F38C1C20583A0085C307 /* Main.storyboard */; };
 		F1B5F3901C20583A0085C307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B5F38F1C20583A0085C307 /* Assets.xcassets */; };
 		F1B5F3931C20583A0085C307 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B5F3911C20583A0085C307 /* LaunchScreen.storyboard */; };
-		F1B5F39D1C2067E30085C307 /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = F1B5F39C1C2067E30085C307 /* init.lua */; };
-		F1B5F39F1C2069270085C307 /* ViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = F1B5F39E1C2069270085C307 /* ViewController.lua */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07936692D80B2D82782F5030 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		1E72B15E1C23DF0E00020C5D /* WaxPatch-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WaxPatch-Prefix.pch"; sourceTree = "<group>"; };
+		1E72B15F1C23DF0E00020C5D /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		1E72B1601C23DF0E00020C5D /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
+		1E72B1711C23DF5000020C5D /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		1E72B1721C23DF5000020C5D /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		1E72B1731C23DF5000020C5D /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		1E72B1741C23DF5000020C5D /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		1E72B1751C23DF5000020C5D /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		1E72B1761C23DF5000020C5D /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		1E72B1771C23DF5000020C5D /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		1E72B1781C23DF5000020C5D /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		1E72B1791C23DF5000020C5D /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		1E72B17E1C23DF6B00020C5D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		8D86C7918E28856D2DB18CF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B5F3801C20583A0085C307 /* Lua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B5F3841C20583A0085C307 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -31,8 +48,6 @@
 		F1B5F38F1C20583A0085C307 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1B5F3921C20583A0085C307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1B5F3941C20583A0085C307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1B5F39C1C2067E30085C307 /* init.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = init.lua; sourceTree = "<group>"; };
-		F1B5F39E1C2069270085C307 /* ViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewController.lua; sourceTree = "<group>"; };
 		F502277E4E77577D08EA72FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E72B17F1C23DF6B00020C5D /* libz.tbd in Frameworks */,
 				CF683A65CC3FCB3947508492 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,9 +64,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E72B15B1C23DE9000020C5D /* ThirdClass */ = {
+			isa = PBXGroup;
+			children = (
+				1E72B15D1C23DF0100020C5D /* WaxPatch */,
+			);
+			path = ThirdClass;
+			sourceTree = "<group>";
+		};
+		1E72B15D1C23DF0100020C5D /* WaxPatch */ = {
+			isa = PBXGroup;
+			children = (
+				1E72B15E1C23DF0E00020C5D /* WaxPatch-Prefix.pch */,
+				1E72B15F1C23DF0E00020C5D /* ZipArchive.h */,
+				1E72B1601C23DF0E00020C5D /* ZipArchive.mm */,
+				1E72B1701C23DF5000020C5D /* minizip */,
+			);
+			path = WaxPatch;
+			sourceTree = "<group>";
+		};
+		1E72B1701C23DF5000020C5D /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				1E72B1711C23DF5000020C5D /* crypt.h */,
+				1E72B1721C23DF5000020C5D /* ioapi.c */,
+				1E72B1731C23DF5000020C5D /* ioapi.h */,
+				1E72B1741C23DF5000020C5D /* mztools.c */,
+				1E72B1751C23DF5000020C5D /* mztools.h */,
+				1E72B1761C23DF5000020C5D /* unzip.c */,
+				1E72B1771C23DF5000020C5D /* unzip.h */,
+				1E72B1781C23DF5000020C5D /* zip.c */,
+				1E72B1791C23DF5000020C5D /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
 		7859C1565F2CFA6CD8B1DC2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1E72B17E1C23DF6B00020C5D /* libz.tbd */,
 				8D86C7918E28856D2DB18CF5 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -86,7 +138,7 @@
 		F1B5F3821C20583A0085C307 /* Lua */ = {
 			isa = PBXGroup;
 			children = (
-				F1B5F39A1C2067310085C307 /* Classes */,
+				1E72B15B1C23DE9000020C5D /* ThirdClass */,
 				F1B5F3861C20583A0085C307 /* AppDelegate.h */,
 				F1B5F3871C20583A0085C307 /* AppDelegate.m */,
 				F1B5F3891C20583A0085C307 /* ViewController.h */,
@@ -106,15 +158,6 @@
 				F1B5F3841C20583A0085C307 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F1B5F39A1C2067310085C307 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				F1B5F39C1C2067E30085C307 /* init.lua */,
-				F1B5F39E1C2069270085C307 /* ViewController.lua */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,8 +221,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B5F39F1C2069270085C307 /* ViewController.lua in Resources */,
-				F1B5F39D1C2067E30085C307 /* init.lua in Resources */,
 				F1B5F3931C20583A0085C307 /* LaunchScreen.storyboard in Resources */,
 				F1B5F3901C20583A0085C307 /* Assets.xcassets in Resources */,
 				F1B5F38E1C20583A0085C307 /* Main.storyboard in Resources */,
@@ -242,8 +283,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1B5F38B1C20583A0085C307 /* ViewController.m in Sources */,
+				1E72B17D1C23DF5000020C5D /* zip.c in Sources */,
+				1E72B17C1C23DF5000020C5D /* unzip.c in Sources */,
 				F1B5F3881C20583A0085C307 /* AppDelegate.m in Sources */,
+				1E72B17B1C23DF5000020C5D /* mztools.c in Sources */,
+				1E72B1611C23DF0E00020C5D /* ZipArchive.mm in Sources */,
 				F1B5F3851C20583A0085C307 /* main.m in Sources */,
+				1E72B17A1C23DF5000020C5D /* ioapi.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

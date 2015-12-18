@@ -16,8 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UITableView *tableView;
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@""];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

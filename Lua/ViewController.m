@@ -16,12 +16,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIImage *image;
-    [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tiegui.jpg"]];
+    
+    NSString *imagePath = [NSString stringWithFormat:@"%@/lua/tiegui.jpg",[self docutmentPath]];
+    UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (NSString *)docutmentPath
+{
+    
+    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    return doc;
+}
 
 #pragma mark - <UITableViewDataSource>
 

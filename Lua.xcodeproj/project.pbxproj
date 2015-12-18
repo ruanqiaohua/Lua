@@ -13,8 +13,6 @@
 		1E72B17C1C23DF5000020C5D /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E72B1761C23DF5000020C5D /* unzip.c */; };
 		1E72B17D1C23DF5000020C5D /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E72B1781C23DF5000020C5D /* zip.c */; };
 		1E72B17F1C23DF6B00020C5D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E72B17E1C23DF6B00020C5D /* libz.tbd */; };
-		1E72B1831C23E9E700020C5D /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1E72B1811C23E9E700020C5D /* init.lua */; };
-		1E72B1841C23E9E700020C5D /* ViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1E72B1821C23E9E700020C5D /* ViewController.lua */; };
 		CF683A65CC3FCB3947508492 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D86C7918E28856D2DB18CF5 /* libPods.a */; };
 		F1B5F3851C20583A0085C307 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B5F3841C20583A0085C307 /* main.m */; };
 		F1B5F3881C20583A0085C307 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B5F3871C20583A0085C307 /* AppDelegate.m */; };
@@ -22,7 +20,9 @@
 		F1B5F38E1C20583A0085C307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B5F38C1C20583A0085C307 /* Main.storyboard */; };
 		F1B5F3901C20583A0085C307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B5F38F1C20583A0085C307 /* Assets.xcassets */; };
 		F1B5F3931C20583A0085C307 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B5F3911C20583A0085C307 /* LaunchScreen.storyboard */; };
-		F1D6CA271C2422A100FB6DCC /* tiegui.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F1D6CA261C2422A100FB6DCC /* tiegui.jpg */; };
+		F1D6CA2B1C242D3300FB6DCC /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = F1D6CA291C242D3300FB6DCC /* init.lua */; };
+		F1D6CA2C1C242D3300FB6DCC /* ViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = F1D6CA2A1C242D3300FB6DCC /* ViewController.lua */; };
+		F1D6CA2F1C2435A800FB6DCC /* tiegui.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F1D6CA2E1C2435A800FB6DCC /* tiegui.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +40,6 @@
 		1E72B1781C23DF5000020C5D /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
 		1E72B1791C23DF5000020C5D /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		1E72B17E1C23DF6B00020C5D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		1E72B1811C23E9E700020C5D /* init.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = init.lua; sourceTree = "<group>"; };
-		1E72B1821C23E9E700020C5D /* ViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewController.lua; sourceTree = "<group>"; };
 		8D86C7918E28856D2DB18CF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B5F3801C20583A0085C307 /* Lua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B5F3841C20583A0085C307 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -53,7 +51,9 @@
 		F1B5F38F1C20583A0085C307 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1B5F3921C20583A0085C307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1B5F3941C20583A0085C307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1D6CA261C2422A100FB6DCC /* tiegui.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tiegui.jpg; sourceTree = "<group>"; };
+		F1D6CA291C242D3300FB6DCC /* init.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = init.lua; sourceTree = "<group>"; };
+		F1D6CA2A1C242D3300FB6DCC /* ViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewController.lua; sourceTree = "<group>"; };
+		F1D6CA2E1C2435A800FB6DCC /* tiegui.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tiegui.jpg; sourceTree = "<group>"; };
 		F502277E4E77577D08EA72FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,15 +105,6 @@
 			path = minizip;
 			sourceTree = "<group>";
 		};
-		1E72B1801C23E9CC00020C5D /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				1E72B1811C23E9E700020C5D /* init.lua */,
-				1E72B1821C23E9E700020C5D /* ViewController.lua */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		7859C1565F2CFA6CD8B1DC2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,8 +144,8 @@
 		F1B5F3821C20583A0085C307 /* Lua */ = {
 			isa = PBXGroup;
 			children = (
-				F1D6CA251C24229600FB6DCC /* imgs */,
-				1E72B1801C23E9CC00020C5D /* Classes */,
+				F1D6CA2D1C2435A800FB6DCC /* imgs */,
+				F1D6CA281C242D3300FB6DCC /* Classes */,
 				1E72B15B1C23DE9000020C5D /* ThirdClass */,
 				F1B5F3861C20583A0085C307 /* AppDelegate.h */,
 				F1B5F3871C20583A0085C307 /* AppDelegate.m */,
@@ -177,10 +168,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F1D6CA251C24229600FB6DCC /* imgs */ = {
+		F1D6CA281C242D3300FB6DCC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F1D6CA261C2422A100FB6DCC /* tiegui.jpg */,
+				F1D6CA291C242D3300FB6DCC /* init.lua */,
+				F1D6CA2A1C242D3300FB6DCC /* ViewController.lua */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F1D6CA2D1C2435A800FB6DCC /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				F1D6CA2E1C2435A800FB6DCC /* tiegui.jpg */,
 			);
 			path = imgs;
 			sourceTree = "<group>";
@@ -246,12 +246,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1D6CA271C2422A100FB6DCC /* tiegui.jpg in Resources */,
-				1E72B1841C23E9E700020C5D /* ViewController.lua in Resources */,
-				1E72B1831C23E9E700020C5D /* init.lua in Resources */,
+				F1D6CA2F1C2435A800FB6DCC /* tiegui.jpg in Resources */,
+				F1D6CA2B1C242D3300FB6DCC /* init.lua in Resources */,
 				F1B5F3931C20583A0085C307 /* LaunchScreen.storyboard in Resources */,
 				F1B5F3901C20583A0085C307 /* Assets.xcassets in Resources */,
 				F1B5F38E1C20583A0085C307 /* Main.storyboard in Resources */,
+				F1D6CA2C1C242D3300FB6DCC /* ViewController.lua in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

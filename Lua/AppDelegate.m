@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 #import "wax.h"
 #import "ZipArchive.h"
+#import "ViewController.h"
 
+#define USE_DYNAMICUPDATE //更新
 #define WAX_PATCH_URL @"https://github.com/ruanqiaohua/Lua/raw/master/Lua/patch.zip"
 
 @interface AppDelegate ()
@@ -18,6 +20,7 @@
 
 @implementation AppDelegate
 
+#ifdef USE_DYNAMICUPDATE
 - (id)init {
     if(self = [super init]) {
         NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
@@ -31,9 +34,14 @@
     }
     return self;
 }
+#endif
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[[UIAlertView alloc] initWithTitle:@"WaxPatch" message:@"This is the obj-c impl of a simple table view. Press [Load] button to load the wax patch and run from lua." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Load", nil] show];
+#ifdef USE_DYNAMICUPDATE
+    [[[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"有新的更新可用" delegate:self cancelButtonTitle:nil otherButtonTitles:@"更新", nil] show];
+#else
+    wax_start("init.lua", nil);
+#endif
     return YES;
 }
 
@@ -59,8 +67,9 @@
             NSString *pp = [[NSString alloc ] initWithFormat:@"%@/?.lua;%@/?/init.lua;", dir, dir];
             setenv(LUA_PATH, [pp UTF8String], 1);
             wax_start("init", nil);
+            self.window.rootViewController = [[ViewController alloc]init];
         } else {
-            [[[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Fail to download wax patch from %@", patchUrl] delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
+            [[[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"加载失败"] delegate:nil cancelButtonTitle:@"tryAgain" otherButtonTitles:nil] show];
         }
     }
 }

@@ -10,7 +10,7 @@
 #import "wax.h"
 #import "ZipArchive.h"
 
-#define WAX_PATCH_URL @"https://raw.github.com/mmin18/WaxPatch/master/patch/patch.zip"
+#define WAX_PATCH_URL @"https://github.com/ruanqiaohua/Lua/raw/master/Lua/patch.zip"
 
 @interface AppDelegate ()
 
@@ -58,7 +58,7 @@
             
             NSString *pp = [[NSString alloc ] initWithFormat:@"%@/?.lua;%@/?/init.lua;", dir, dir];
             setenv(LUA_PATH, [pp UTF8String], 1);
-            wax_start("patch", nil);
+            wax_start("init", nil);
         } else {
             [[[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Fail to download wax patch from %@", patchUrl] delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil] show];
         }

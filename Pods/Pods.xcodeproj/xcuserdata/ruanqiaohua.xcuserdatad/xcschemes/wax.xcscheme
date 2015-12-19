@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '42E4D04E9AD156558FC15B9E'
+               BlueprintIdentifier = '6B3ED3C260C8202D399D0D40'
                BlueprintName = 'wax'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libwax.a'>

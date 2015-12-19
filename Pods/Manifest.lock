@@ -1,7 +1,23 @@
 PODS:
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
+  - AFNetworking/NSURLSession (3.0.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
+    - AFNetworking/NSURLSession
   - wax (1.0.0)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.0.2)
   - wax (from `https://github.com/alibaba/wax.git`, tag `1.1.0`)
 
 EXTERNAL SOURCES:
@@ -15,6 +31,7 @@ CHECKOUT OPTIONS:
     :tag: 1.1.0
 
 SPEC CHECKSUMS:
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   wax: 6f804b47b761e99c1dc905d2a0698528699dfde0
 
 COCOAPODS: 0.39.0

@@ -16,7 +16,9 @@
 		1E72B1831C23E9E700020C5D /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1E72B1811C23E9E700020C5D /* init.lua */; };
 		1E72B1841C23E9E700020C5D /* ViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1E72B1821C23E9E700020C5D /* ViewController.lua */; };
 		CF683A65CC3FCB3947508492 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D86C7918E28856D2DB18CF5 /* libPods.a */; };
-		F173702E1C250012007DFA88 /* DetailViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = F173702D1C250012007DFA88 /* DetailViewController.lua */; };
+		F18164211C25A467007DCAFA /* FirstViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = F181641E1C25A467007DCAFA /* FirstViewController.lua */; };
+		F18164221C25A467007DCAFA /* SecondViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = F181641F1C25A467007DCAFA /* SecondViewController.lua */; };
+		F18164231C25A467007DCAFA /* ThirdViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = F18164201C25A467007DCAFA /* ThirdViewController.lua */; };
 		F1B5F3851C20583A0085C307 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B5F3841C20583A0085C307 /* main.m */; };
 		F1B5F3881C20583A0085C307 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B5F3871C20583A0085C307 /* AppDelegate.m */; };
 		F1B5F38B1C20583A0085C307 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B5F38A1C20583A0085C307 /* ViewController.m */; };
@@ -44,7 +46,9 @@
 		1E72B1811C23E9E700020C5D /* init.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = init.lua; sourceTree = "<group>"; };
 		1E72B1821C23E9E700020C5D /* ViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewController.lua; sourceTree = "<group>"; };
 		8D86C7918E28856D2DB18CF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F173702D1C250012007DFA88 /* DetailViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DetailViewController.lua; sourceTree = "<group>"; };
+		F181641E1C25A467007DCAFA /* FirstViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FirstViewController.lua; sourceTree = "<group>"; };
+		F181641F1C25A467007DCAFA /* SecondViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SecondViewController.lua; sourceTree = "<group>"; };
+		F18164201C25A467007DCAFA /* ThirdViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ThirdViewController.lua; sourceTree = "<group>"; };
 		F1B5F3801C20583A0085C307 /* Lua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B5F3841C20583A0085C307 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F1B5F3861C20583A0085C307 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,7 +116,9 @@
 			children = (
 				1E72B1811C23E9E700020C5D /* init.lua */,
 				1E72B1821C23E9E700020C5D /* ViewController.lua */,
-				F173702D1C250012007DFA88 /* DetailViewController.lua */,
+				F181641E1C25A467007DCAFA /* FirstViewController.lua */,
+				F181641F1C25A467007DCAFA /* SecondViewController.lua */,
+				F18164201C25A467007DCAFA /* ThirdViewController.lua */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -251,9 +257,11 @@
 			files = (
 				F1D6CA271C2422A100FB6DCC /* tiegui.jpg in Resources */,
 				1E72B1841C23E9E700020C5D /* ViewController.lua in Resources */,
+				F18164231C25A467007DCAFA /* ThirdViewController.lua in Resources */,
 				1E72B1831C23E9E700020C5D /* init.lua in Resources */,
-				F173702E1C250012007DFA88 /* DetailViewController.lua in Resources */,
+				F18164221C25A467007DCAFA /* SecondViewController.lua in Resources */,
 				F1B5F3931C20583A0085C307 /* LaunchScreen.storyboard in Resources */,
+				F18164211C25A467007DCAFA /* FirstViewController.lua in Resources */,
 				F1B5F3901C20583A0085C307 /* Assets.xcassets in Resources */,
 				F1B5F38E1C20583A0085C307 /* Main.storyboard in Resources */,
 			);

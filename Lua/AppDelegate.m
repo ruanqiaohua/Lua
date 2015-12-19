@@ -40,7 +40,7 @@
 #ifdef USE_DYNAMICUPDATE
     [[[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"有新的更新可用" delegate:self cancelButtonTitle:nil otherButtonTitles:@"更新", nil] show];
 #else
-    //wax_start("init.lua", nil);
+    wax_start("init.lua", nil);
 #endif
     return YES;
 }

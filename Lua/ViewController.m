@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "ZipArchive.h"
+#import "wax.h"
 
-@interface ViewController ()
+#define WAX_PATCH_URL @"https://github.com/ruanqiaohua/Lua/raw/master/Lua/patch.zip"
+
+@interface ViewController ()<NSURLConnectionDelegate>
 
 @end
 
@@ -16,10 +20,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIImage *image;
-    [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0)];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tiegui.jpg"]];
+    
+ 
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if([self requestData]) {
+        [_loading stopAnimating];
+        [UIApplication sharedApplication].keyWindow.rootViewController = [ViewController new];
+    }else {
+        [_loading startAnimating];
+        [self requestData];
+    }
+}
+
+- (BOOL)requestData
+{
+    NSURL *patchUrl = [NSURL URLWithString:WAX_PATCH_URL];
+    NSData *data = [NSURLConnection sendSynchronousRequest:[NSURLRequest requestWithURL:patchUrl] returningResponse:NULL error:NULL];
+    if(data) {
+        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+        
+        NSString *patchZip = [doc stringByAppendingPathComponent:@"patch.zip"];
+        [data writeToFile:patchZip atomically:YES];
+        
+        NSString *dir = [doc stringByAppendingPathComponent:@"lua"];
+        [[NSFileManager defaultManager] removeItemAtPath:dir error:NULL];
+        [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:NULL];
+        
+        ZipArchive *zip = [[ZipArchive alloc] init];
+        [zip UnzipOpenFile:patchZip];
+        [zip UnzipFileTo:dir overWrite:YES];
+        
+        NSString *pp = [[NSString alloc ] initWithFormat:@"%@/?.lua;%@/?/init.lua;", dir, dir];
+        setenv(LUA_PATH, [pp UTF8String], 1);
+        wax_start("init", nil);
+        return YES;
+    }
+    return NO;
 }
 
 

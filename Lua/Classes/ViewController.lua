@@ -1,7 +1,12 @@
-waxClass{"ViewController", UIViewController, protocols = {"UITableViewDataSource", "UITableViewDelegate"}}
+require "DetailViewController"
+waxClass{"ViewController", UIViewController}
 
-function viewDidLoad(self)
-local background = UIImageView:initWithFrame(self:view():bounds())
-background:setImage(UIImage:imageNamed("tiegui.jpg"))
-self:view():addSubview(background)
+function viewDidAppear(self)
+print("viewDidAppear_animated")
+local vc = DetailViewController:init()
+vc:setTitle("Lua")
+local nav = UINavigationController:initWithRootViewController(vc)
+local tab = UITabBarController:init()
+tab:setViewControllers({nav,nav,nav,nav})
+self:presentViewController_animated_completion(tab, true, nil)
 end

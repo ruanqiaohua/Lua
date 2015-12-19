@@ -11,7 +11,7 @@
 #import "ZipArchive.h"
 #import "ViewController.h"
 
-#define USE_DYNAMICUPDATE //更新
+//#define USE_DYNAMICUPDATE //更新
 #define WAX_PATCH_URL @"https://github.com/ruanqiaohua/Lua/raw/master/Lua/patch.zip"
 
 @interface AppDelegate ()
@@ -40,7 +40,7 @@
 #ifdef USE_DYNAMICUPDATE
     [[[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"有新的更新可用" delegate:self cancelButtonTitle:nil otherButtonTitles:@"更新", nil] show];
 #else
-    wax_start("init.lua", nil);
+    //wax_start("init.lua", nil);
 #endif
     return YES;
 }

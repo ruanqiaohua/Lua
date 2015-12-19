@@ -11,7 +11,7 @@
 #import "ZipArchive.h"
 #import "ViewController.h"
 
-#define USE_DYNAMICUPDATE //更新
+//#define USE_DYNAMICUPDATE //更新
 #define WAX_PATCH_URL @"https://github.com/ruanqiaohua/Lua/raw/master/Lua/patch.zip"
 
 @interface AppDelegate ()
@@ -19,24 +19,6 @@
 @end
 
 @implementation AppDelegate
-
-#ifdef USE_DYNAMICUPDATE
-- (id)init {
-    if(self = [super init]) {
-        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-        
-        NSString *dir = [doc stringByAppendingPathComponent:@"lua"];
-        NSString *patchZip = [doc stringByAppendingPathComponent:@"patch.zip"];
-        [[NSFileManager defaultManager] removeItemAtPath:dir error:NULL];
-        [[NSFileManager defaultManager] removeItemAtPath:patchZip error:NULL];
-        [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:NULL];
-        
-        NSString *pp = [[NSString alloc ] initWithFormat:@"%@/?.lua;%@/?/init.lua;", dir, dir];
-        setenv(LUA_PATH, [pp UTF8String], 1);
-    }
-    return self;
-}
-#endif
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 #ifdef USE_DYNAMICUPDATE

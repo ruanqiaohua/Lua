@@ -31,10 +31,12 @@
 
 - (void)requestData
 {
+    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *patchZip = [doc stringByAppendingPathComponent:@"patch.zip"];
+    [[NSFileManager defaultManager] removeItemAtPath:patchZip error:NULL];
+
     [self downloadPatchZip:^(BOOL success) {
         if (success) {
-            NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-            NSString *patchZip = [doc stringByAppendingPathComponent:@"patch.zip"];
             NSString *dir = [doc stringByAppendingPathComponent:@"lua"];
             [[NSFileManager defaultManager] removeItemAtPath:dir error:NULL];
             [[NSFileManager defaultManager] createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:NULL];

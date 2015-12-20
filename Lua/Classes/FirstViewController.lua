@@ -1,3 +1,4 @@
+require "FirstDetailViewController"
 waxClass{"FirstViewController", UIViewController, protocols = {"UITableViewDataSource", "UITableViewDelegate"}}
 
 function viewDidLoad(self)
@@ -20,4 +21,11 @@ function tableView_cellForRowAtIndexPath(self, tableView, indexPath)
 local cell = tableView:dequeueReusableCellWithIdentifier("cellIdentifier")
 cell:textLabel():setText(string.format("%d",indexPath:row()))
 return cell
+end
+
+-- UITableViewDelegate
+
+function tableView_didSelectRowAtIndexPath(self, tableView, indexPath)
+local VC = FirstDetailViewController:init()
+self:navigationController():pushViewController_animated(VC, true)
 end

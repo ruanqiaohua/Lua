@@ -13,7 +13,7 @@
 
 #define WAX_PATCH_URL @"https://github.com/ruanqiaohua/Lua/raw/master/Lua/patch.zip"
 
-@interface ViewController ()<NSURLConnectionDelegate>
+@interface ViewController ()
 
 @end
 
@@ -21,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.hidesBottomBarWhenPushed = YES;
     // Do any additional setup after loading the view, typically from a nib.
 }
 

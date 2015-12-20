@@ -11,7 +11,7 @@
 #import "ZipArchive.h"
 #import "ViewController.h"
 
-//#define USE_DYNAMICUPDATE //更新
+#define USE_DYNAMICUPDATE //更新
 #define WAX_PATCH_URL @"https://github.com/ruanqiaohua/Lua/raw/master/Lua/patch.zip"
 
 @interface AppDelegate ()

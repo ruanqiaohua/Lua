@@ -19,7 +19,7 @@
 		F18164211C25A467007DCAFA /* FirstViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = F181641E1C25A467007DCAFA /* FirstViewController.lua */; };
 		F18164221C25A467007DCAFA /* SecondViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = F181641F1C25A467007DCAFA /* SecondViewController.lua */; };
 		F18164231C25A467007DCAFA /* ThirdViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = F18164201C25A467007DCAFA /* ThirdViewController.lua */; };
-		F18B70AC1C265C8F006F3282 /* FirstDetailViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = F18B70AB1C265C8F006F3282 /* FirstDetailViewController.lua */; };
+		F18B70AE1C26697B006F3282 /* FirstDetailViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = F18B70AD1C26697B006F3282 /* FirstDetailViewController.lua */; };
 		F1B5F3851C20583A0085C307 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B5F3841C20583A0085C307 /* main.m */; };
 		F1B5F3881C20583A0085C307 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B5F3871C20583A0085C307 /* AppDelegate.m */; };
 		F1B5F38B1C20583A0085C307 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B5F38A1C20583A0085C307 /* ViewController.m */; };
@@ -50,7 +50,7 @@
 		F181641E1C25A467007DCAFA /* FirstViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FirstViewController.lua; sourceTree = "<group>"; };
 		F181641F1C25A467007DCAFA /* SecondViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SecondViewController.lua; sourceTree = "<group>"; };
 		F18164201C25A467007DCAFA /* ThirdViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ThirdViewController.lua; sourceTree = "<group>"; };
-		F18B70AB1C265C8F006F3282 /* FirstDetailViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FirstDetailViewController.lua; sourceTree = "<group>"; };
+		F18B70AD1C26697B006F3282 /* FirstDetailViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FirstDetailViewController.lua; sourceTree = "<group>"; };
 		F1B5F3801C20583A0085C307 /* Lua.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lua.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B5F3841C20583A0085C307 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F1B5F3861C20583A0085C307 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 		1E72B1801C23E9CC00020C5D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F18B70AA1C265C6C006F3282 /* FirstVC */,
+				F18B70AD1C26697B006F3282 /* FirstDetailViewController.lua */,
 				1E72B1811C23E9E700020C5D /* init.lua */,
 				1E72B1821C23E9E700020C5D /* ViewController.lua */,
 				F181641E1C25A467007DCAFA /* FirstViewController.lua */,
@@ -142,14 +142,6 @@
 				F502277E4E77577D08EA72FF /* Pods.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		F18B70AA1C265C6C006F3282 /* FirstVC */ = {
-			isa = PBXGroup;
-			children = (
-				F18B70AB1C265C8F006F3282 /* FirstDetailViewController.lua */,
-			);
-			path = FirstVC;
 			sourceTree = "<group>";
 		};
 		F1B5F3771C20583A0085C307 = {
@@ -273,9 +265,9 @@
 				F18164221C25A467007DCAFA /* SecondViewController.lua in Resources */,
 				F1B5F3931C20583A0085C307 /* LaunchScreen.storyboard in Resources */,
 				F18164211C25A467007DCAFA /* FirstViewController.lua in Resources */,
-				F18B70AC1C265C8F006F3282 /* FirstDetailViewController.lua in Resources */,
 				F1B5F3901C20583A0085C307 /* Assets.xcassets in Resources */,
 				F1B5F38E1C20583A0085C307 /* Main.storyboard in Resources */,
+				F18B70AE1C26697B006F3282 /* FirstDetailViewController.lua in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

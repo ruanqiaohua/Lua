@@ -1,4 +1,4 @@
-require "FirstDetailViewController"
+require "LiveMainViewController"
 waxClass{"FirstViewController", UIViewController, protocols = {"UITableViewDataSource", "UITableViewDelegate"}}
 
 function viewDidLoad(self)
@@ -26,6 +26,8 @@ end
 -- UITableViewDelegate
 
 function tableView_didSelectRowAtIndexPath(self, tableView, indexPath)
-local VC = FirstDetailViewController:init()
-self:navigationController():pushViewController_animated(VC, true)
+--liveMainVC
+local liveMainVC = LiveMainViewController:init()
+liveMainVC:setHidesBottomBarWhenPushed(true)
+self:navigationController():pushViewController_animated(liveMainVC, true)
 end

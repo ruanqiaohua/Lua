@@ -20,27 +20,19 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="tiegui.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VYY-bo-8no">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7Mo-Pr-c4J">
-                                <rect key="frame" x="215" y="447" width="150" height="2"/>
-                                <color key="progressTintColor" red="0.2299823101" green="1" blue="0.96791014669999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </progressView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wIn-aA-RVk">
                                 <rect key="frame" x="-10" y="-10" width="20" height="20"/>
                                 <color key="color" red="0.2299823101" green="1" blue="0.96791014669999997" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96470588235294119" green="0.30196078431372547" blue="0.62352941176470589" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7Mo-Pr-c4J" secondAttribute="bottom" id="Cxu-2C-9WL"/>
                             <constraint firstItem="VYY-bo-8no" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HCk-Cp-dFN"/>
                             <constraint firstItem="wIn-aA-RVk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I6B-xH-ww2"/>
-                            <constraint firstAttribute="trailing" secondItem="7Mo-Pr-c4J" secondAttribute="trailing" id="IFW-nZ-9uu"/>
                             <constraint firstItem="wIn-aA-RVk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="e9P-hG-aQh"/>
                             <constraint firstAttribute="trailing" secondItem="VYY-bo-8no" secondAttribute="trailing" id="g6j-xb-lKY"/>
                             <constraint firstAttribute="bottom" secondItem="VYY-bo-8no" secondAttribute="bottom" id="ohE-lA-WaI"/>
                             <constraint firstItem="VYY-bo-8no" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qon-n5-Q45"/>
-                            <constraint firstItem="7Mo-Pr-c4J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="w8z-IU-eac"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -49,9 +41,6 @@
                             <mask key="constraints">
                                 <exclude reference="I6B-xH-ww2"/>
                                 <exclude reference="e9P-hG-aQh"/>
-                                <exclude reference="IFW-nZ-9uu"/>
-                                <exclude reference="w8z-IU-eac"/>
-                                <exclude reference="Cxu-2C-9WL"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -61,15 +50,11 @@
                             <mask key="constraints">
                                 <include reference="I6B-xH-ww2"/>
                                 <include reference="e9P-hG-aQh"/>
-                                <include reference="IFW-nZ-9uu"/>
-                                <include reference="w8z-IU-eac"/>
-                                <include reference="Cxu-2C-9WL"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="loading" destination="wIn-aA-RVk" id="C0N-Uh-WVh"/>
-                        <outlet property="progressView" destination="7Mo-Pr-c4J" id="qLh-yl-k3e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

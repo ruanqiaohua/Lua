@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E56AEF01C3FA0B900F055DA /* LiveChooseSongTabelViewCell.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1E56AEEF1C3FA0B900F055DA /* LiveChooseSongTabelViewCell.lua */; };
 		1E72B1611C23DF0E00020C5D /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1E72B1601C23DF0E00020C5D /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1E72B17A1C23DF5000020C5D /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E72B1721C23DF5000020C5D /* ioapi.c */; };
 		1E72B17B1C23DF5000020C5D /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E72B1741C23DF5000020C5D /* mztools.c */; };
@@ -15,6 +16,9 @@
 		1E72B17F1C23DF6B00020C5D /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E72B17E1C23DF6B00020C5D /* libz.tbd */; };
 		1E72B1831C23E9E700020C5D /* init.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1E72B1811C23E9E700020C5D /* init.lua */; };
 		1E72B1841C23E9E700020C5D /* ViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1E72B1821C23E9E700020C5D /* ViewController.lua */; };
+		1E892BDC1C3E5CBF0096322C /* LiveRequestSongTabelViewCell.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1E892BDA1C3E5CBF0096322C /* LiveRequestSongTabelViewCell.lua */; };
+		1E892BDD1C3E5CBF0096322C /* LiveRequestSongViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1E892BDB1C3E5CBF0096322C /* LiveRequestSongViewController.lua */; };
+		1E892BE01C3E5D0E0096322C /* LiveMainViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1E892BDF1C3E5D0E0096322C /* LiveMainViewController.lua */; };
 		CF683A65CC3FCB3947508492 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D86C7918E28856D2DB18CF5 /* libPods.a */; };
 		F18164211C25A467007DCAFA /* FirstViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = F181641E1C25A467007DCAFA /* FirstViewController.lua */; };
 		F18164221C25A467007DCAFA /* SecondViewController.lua in Resources */ = {isa = PBXBuildFile; fileRef = F181641F1C25A467007DCAFA /* SecondViewController.lua */; };
@@ -31,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		07936692D80B2D82782F5030 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		1E56AEEF1C3FA0B900F055DA /* LiveChooseSongTabelViewCell.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LiveChooseSongTabelViewCell.lua; sourceTree = "<group>"; };
 		1E72B15E1C23DF0E00020C5D /* WaxPatch-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WaxPatch-Prefix.pch"; sourceTree = "<group>"; };
 		1E72B15F1C23DF0E00020C5D /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		1E72B1601C23DF0E00020C5D /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
@@ -46,6 +51,9 @@
 		1E72B17E1C23DF6B00020C5D /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1E72B1811C23E9E700020C5D /* init.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = init.lua; sourceTree = "<group>"; };
 		1E72B1821C23E9E700020C5D /* ViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ViewController.lua; sourceTree = "<group>"; };
+		1E892BDA1C3E5CBF0096322C /* LiveRequestSongTabelViewCell.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LiveRequestSongTabelViewCell.lua; sourceTree = "<group>"; };
+		1E892BDB1C3E5CBF0096322C /* LiveRequestSongViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LiveRequestSongViewController.lua; sourceTree = "<group>"; };
+		1E892BDF1C3E5D0E0096322C /* LiveMainViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LiveMainViewController.lua; sourceTree = "<group>"; };
 		8D86C7918E28856D2DB18CF5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F181641E1C25A467007DCAFA /* FirstViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FirstViewController.lua; sourceTree = "<group>"; };
 		F181641F1C25A467007DCAFA /* SecondViewController.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SecondViewController.lua; sourceTree = "<group>"; };
@@ -122,8 +130,20 @@
 				F181641E1C25A467007DCAFA /* FirstViewController.lua */,
 				F181641F1C25A467007DCAFA /* SecondViewController.lua */,
 				F18164201C25A467007DCAFA /* ThirdViewController.lua */,
+				1E892BDF1C3E5D0E0096322C /* LiveMainViewController.lua */,
+				1E892BDE1C3E5CC70096322C /* SongVC */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		1E892BDE1C3E5CC70096322C /* SongVC */ = {
+			isa = PBXGroup;
+			children = (
+				1E892BDA1C3E5CBF0096322C /* LiveRequestSongTabelViewCell.lua */,
+				1E56AEEF1C3FA0B900F055DA /* LiveChooseSongTabelViewCell.lua */,
+				1E892BDB1C3E5CBF0096322C /* LiveRequestSongViewController.lua */,
+			);
+			name = SongVC;
 			sourceTree = "<group>";
 		};
 		7859C1565F2CFA6CD8B1DC2D /* Frameworks */ = {
@@ -258,9 +278,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E56AEF01C3FA0B900F055DA /* LiveChooseSongTabelViewCell.lua in Resources */,
+				1E892BDC1C3E5CBF0096322C /* LiveRequestSongTabelViewCell.lua in Resources */,
+				1E892BE01C3E5D0E0096322C /* LiveMainViewController.lua in Resources */,
 				F1D6CA271C2422A100FB6DCC /* tiegui.jpg in Resources */,
 				1E72B1841C23E9E700020C5D /* ViewController.lua in Resources */,
 				F18164231C25A467007DCAFA /* ThirdViewController.lua in Resources */,
+				1E892BDD1C3E5CBF0096322C /* LiveRequestSongViewController.lua in Resources */,
 				1E72B1831C23E9E700020C5D /* init.lua in Resources */,
 				F18164221C25A467007DCAFA /* SecondViewController.lua in Resources */,
 				F1B5F3931C20583A0085C307 /* LaunchScreen.storyboard in Resources */,

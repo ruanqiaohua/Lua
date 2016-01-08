@@ -64,7 +64,6 @@
 
 - (void)downloadPatchZip:(void(^)(BOOL success))success
 {
-    _progressView.progress = 0.0;
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     
@@ -72,8 +71,6 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     
     NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
-        CGFloat progress = [[NSString stringWithFormat:@"%.0f",downloadProgress.fractionCompleted] floatValue];
-        _progressView.progress = progress;
     } destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
         NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
         return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
@@ -86,6 +83,8 @@
     }];
     [downloadTask resume];
 }
+
+#pragma mark - UITextField
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

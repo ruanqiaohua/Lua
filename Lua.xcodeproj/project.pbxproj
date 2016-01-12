@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E22F1A11C43A05200BB75BF /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E22F1A01C43A05200BB75BF /* DataManager.m */; };
 		1E56AEF01C3FA0B900F055DA /* LiveChooseSongTabelViewCell.lua in Resources */ = {isa = PBXBuildFile; fileRef = 1E56AEEF1C3FA0B900F055DA /* LiveChooseSongTabelViewCell.lua */; };
 		1E72B1611C23DF0E00020C5D /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1E72B1601C23DF0E00020C5D /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1E72B17A1C23DF5000020C5D /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 1E72B1721C23DF5000020C5D /* ioapi.c */; };
@@ -35,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		07936692D80B2D82782F5030 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		1E22F19F1C43A05200BB75BF /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		1E22F1A01C43A05200BB75BF /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		1E56AEEF1C3FA0B900F055DA /* LiveChooseSongTabelViewCell.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LiveChooseSongTabelViewCell.lua; sourceTree = "<group>"; };
 		1E72B15E1C23DF0E00020C5D /* WaxPatch-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WaxPatch-Prefix.pch"; sourceTree = "<group>"; };
 		1E72B15F1C23DF0E00020C5D /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 				F1B5F3871C20583A0085C307 /* AppDelegate.m */,
 				F1B5F3891C20583A0085C307 /* ViewController.h */,
 				F1B5F38A1C20583A0085C307 /* ViewController.m */,
+				1E22F19F1C43A05200BB75BF /* DataManager.h */,
+				1E22F1A01C43A05200BB75BF /* DataManager.m */,
 				F1B5F38C1C20583A0085C307 /* Main.storyboard */,
 				F1B5F38F1C20583A0085C307 /* Assets.xcassets */,
 				F1B5F3911C20583A0085C307 /* LaunchScreen.storyboard */,
@@ -357,6 +362,7 @@
 				1E72B17B1C23DF5000020C5D /* mztools.c in Sources */,
 				1E72B1611C23DF0E00020C5D /* ZipArchive.mm in Sources */,
 				F1B5F3851C20583A0085C307 /* main.m in Sources */,
+				1E22F1A11C43A05200BB75BF /* DataManager.m in Sources */,
 				1E72B17A1C23DF5000020C5D /* ioapi.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

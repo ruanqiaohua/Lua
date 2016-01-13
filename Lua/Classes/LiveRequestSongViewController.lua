@@ -1,5 +1,6 @@
 require "LiveRequestSongTabelViewCell"
 require "LiveChooseSongTabelViewCell"
+
 waxClass{"LiveRequestSongViewController", UIViewController, protocols = {"UITableViewDataSource", "UITableViewDelegate"}}
 
 function viewDidLoad(self)
@@ -54,7 +55,7 @@ function viewDidLoad(self)
 
   	self.chooseSongBtn = UIButton:buttonWithType(1)
     self.chooseSongBtn:setFrame(CGRect(bounds.width-60,7,50,30))
-    self.chooseSongBtn:layer():setCornerRadius(6)
+    self.chooseSongBtn:layer():setCornerRadius(3)
     self.chooseSongBtn:layer():setMasksToBounds(true)
     self.chooseSongBtn:setBackgroundColor(UIColor:colorWithRed_green_blue_alpha(246.0/255,77.0/255.0,159.0/255.0,1))
 	self.chooseSongBtn:setTitle_forState("点节目",UIControlStateNormal)
@@ -62,14 +63,57 @@ function viewDidLoad(self)
 	self.chooseSongBtn:addTarget_action_forControlEvents(self,"chooseSongBtnDidClick",UIControlEventTouchUpInside)
 	self.inPutView:addSubview(self.chooseSongBtn)
 
+    notificationCenter(self)
+    --requestData(self)
+
+end
+
+--键盘的监听和处理
+
+function notificationCenter(self)
+    NSNotificationCenter:defaultCenter():addObserver_selector_name_object(self,"keyboardWillShow:","UIKeyboardWillShowNotification",nil)
+    NSNotificationCenter:defaultCenter():addObserver_selector_name_object(self,"keyboardWillHide:","UIKeyboardWillHideNotification",nil)
+end
+
+function keyboardWillShow(self, note)
+local userInfo = toobjc(note):userInfo()
+local keyboardRect = userInfo["UIKeyboardFrameEndUserInfoKey"]
+moveInputBarWithKeyboardHeight(self,keyboardRect["height"])
+end
+
+function keyboardWillHide(self, note)
+moveInputBarWithKeyboardHeight(self,0)
+end
+
+function touchesBegan_withEvent(self,touches,event)
+self:view():endEditing(true)
+end
+
+function moveInputBarWithKeyboardHeight(self,height)
+    local bounds = self:view():bounds()
+    if height == 0 then
+        self.inPutView:setFrame(CGRect(0,bounds.height-88,bounds.width,44))
+    else
+        self.inPutView:setFrame(CGRect(0,bounds.height-88-height,bounds.width,44))
+    end
+end
+
+--请求数据
+
+function requestData(self)
+url = "http://192.168.1.48/show/getShowList?PHPSESSID=bu2l9otoj2ntm93j65qd16phb4"
+wax.http.request{url,method = "post",callback = function(body, response)
+puts(response:statusCode())
+puts(body)
+end}
 end
 
 function programmeSegmentValueChange(self)
 local index = self.programmeSegment:selectedSegmentIndex()
 if index == 0 then
-self:view():bringSubviewToFront(self.songsTabeleView)
+self:view():sendSubviewToBack(self.chooseSongsTabeleView)
 else
-self:view():bringSubviewToFront(self.chooseSongsTabeleView)
+self:view():sendSubviewToBack(self.songsTabeleView)
 end
 end
 
@@ -112,5 +156,5 @@ end
 -- UITableViewDelegate
 
 function tableView_didSelectRowAtIndexPath(self, tableView, indexPath)
-
+self:view():endEditing(true)
 end

@@ -23,20 +23,20 @@ if self then
     self.coin:setTextColor(UIColor:lightGrayColor())
     self:contentView():addSubview(self.coin)
 
-    self.button = UIButton:buttonWithType(1)
-    self.button:setFrame(CGRect(bounds.width-60,7,50,30))
-    self.button:layer():setCornerRadius(6)
-    self.button:layer():setMasksToBounds(true)
-    self.button:setBackgroundColor(UIColor:colorWithRed_green_blue_alpha(93.0/255,187.0/255.0,227.0/255.0,1))
-	self.button:setTitle_forState("点节目",UIControlStateNormal)
-	self.button:setTitleColor_forState(UIColor:whiteColor(),UIControlStateNormal)
-	self.button:addTarget_action_forControlEvents(self,"buttonDidClick",UIControlEventTouchUpInside)
-	self:contentView():addSubview(self.button)
+    self.chooseSong = UIButton:buttonWithType(1)
+    self.chooseSong:setFrame(CGRect(bounds.width-60,7,50,30))
+    self.chooseSong:layer():setCornerRadius(3)
+    self.chooseSong:layer():setMasksToBounds(true)
+    self.chooseSong:setBackgroundColor(UIColor:colorWithRed_green_blue_alpha(93.0/255,187.0/255.0,227.0/255.0,1))
+	self.chooseSong:setTitle_forState("点节目",UIControlStateNormal)
+	self.chooseSong:setTitleColor_forState(UIColor:whiteColor(),UIControlStateNormal)
+	self.chooseSong:addTarget_action_forControlEvents(self,"chooseSongButtonDidClick",UIControlEventTouchUpInside)
+	self:contentView():addSubview(self.chooseSong)
 end
 
 return self
 end
 
-function buttonDidClick(self)
-print("buttonDidClick")
+function chooseSongButtonDidClick(self)
+print("chooseSongButtonDidClick")
 end

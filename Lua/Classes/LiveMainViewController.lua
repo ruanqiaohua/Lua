@@ -25,7 +25,7 @@ self.liveRequestSongVC = LiveRequestSongViewController:init()
 local songView = self.liveRequestSongVC:view()
 local bounds = self:view():bounds()
 local origin_Y = bounds.width * 3 / 4
-songView:setFrame(CGRect(0,origin_Y,bounds.width,bounds.height-origin_Y-44))
+songView:setFrame(CGRect(0,origin_Y,bounds.width,bounds.height-origin_Y+44))
 self:view():addSubview(songView)
 end
 end

@@ -35,7 +35,3 @@ end
 
 return self
 end
-
-function buttonDidClick(self)
-print("buttonDidClick")
-end

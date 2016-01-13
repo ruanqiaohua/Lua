@@ -48,7 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (nullable NSURLRequest *)requestBySerializingRequest:(NSURLRequest *)request
                                withParameters:(nullable id)parameters
-                                        error:(NSError * _Nullable __autoreleasing *)error NS_SWIFT_NOTHROW;
+                                        error:(NSError * _Nullable __autoreleasing *)error;
 
 @end
 
@@ -129,7 +129,7 @@ typedef NS_ENUM(NSUInteger, AFHTTPRequestQueryStringSerializationStyle) {
 
  @discussion To add or remove default request headers, use `setValue:forHTTPHeaderField:`.
  */
-@property (readonly, nonatomic, strong) NSDictionary <NSString *, NSString *> *HTTPRequestHeaders;
+@property (readonly, nonatomic, strong) NSDictionary *HTTPRequestHeaders;
 
 /**
  Creates and returns a serializer with default configuration.
@@ -164,6 +164,12 @@ forHTTPHeaderField:(NSString *)field;
                                        password:(NSString *)password;
 
 /**
+ @deprecated This method has been deprecated. Use -setValue:forHTTPHeaderField: instead.
+ */
+- (void)setAuthorizationHeaderFieldWithToken:(NSString *)token DEPRECATED_ATTRIBUTE;
+
+
+/**
  Clears any existing value for the "Authorization" HTTP header.
  */
 - (void)clearAuthorizationHeader;
@@ -175,7 +181,7 @@ forHTTPHeaderField:(NSString *)field;
 /**
  HTTP methods for which serialized requests will encode parameters as a query string. `GET`, `HEAD`, and `DELETE` by default.
  */
-@property (nonatomic, strong) NSSet <NSString *> *HTTPMethodsEncodingParametersInURI;
+@property (nonatomic, strong) NSSet *HTTPMethodsEncodingParametersInURI;
 
 /**
  Set the method of query string serialization according to one of the pre-defined styles.
@@ -198,6 +204,13 @@ forHTTPHeaderField:(NSString *)field;
 ///-------------------------------
 
 /**
+ @deprecated This method has been deprecated. Use -requestWithMethod:URLString:parameters:error: instead.
+ */
+- (NSMutableURLRequest *)requestWithMethod:(NSString *)method
+                                 URLString:(NSString *)URLString
+                                parameters:(id)parameters DEPRECATED_ATTRIBUTE;
+
+/**
  Creates an `NSMutableURLRequest` object with the specified HTTP method and URL string.
 
  If the HTTP method is `GET`, `HEAD`, or `DELETE`, the parameters will be used to construct a url-encoded query string that is appended to the request's URL. Otherwise, the parameters will be encoded according to the value of the `parameterEncoding` property, and set as the request body.
@@ -215,6 +228,14 @@ forHTTPHeaderField:(NSString *)field;
                                      error:(NSError * _Nullable __autoreleasing *)error;
 
 /**
+ @deprecated This method has been deprecated. Use -multipartFormRequestWithMethod:URLString:parameters:constructingBodyWithBlock:error: instead.
+ */
+- (NSMutableURLRequest *)multipartFormRequestWithMethod:(NSString *)method
+                                              URLString:(NSString *)URLString
+                                             parameters:(NSDictionary *)parameters
+                              constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block DEPRECATED_ATTRIBUTE;
+
+/**
  Creates an `NSMutableURLRequest` object with the specified HTTP method and URLString, and constructs a `multipart/form-data` HTTP body, using the specified parameters and multipart form data block. See http://www.w3.org/TR/html4/interact/forms.html#h-17.13.4.2
 
  Multipart form requests are automatically streamed, reading files directly from disk along with in-memory data in a single HTTP body. The resulting `NSMutableURLRequest` object has an `HTTPBodyStream` property, so refrain from setting `HTTPBodyStream` or `HTTPBody` on this request object, as it will clear out the multipart form body stream.
@@ -229,7 +250,7 @@ forHTTPHeaderField:(NSString *)field;
  */
 - (NSMutableURLRequest *)multipartFormRequestWithMethod:(NSString *)method
                                               URLString:(NSString *)URLString
-                                             parameters:(nullable NSDictionary <NSString *, id> *)parameters
+                                             parameters:(nullable NSDictionary *)parameters
                               constructingBodyWithBlock:(nullable void (^)(id <AFMultipartFormData> formData))block
                                                   error:(NSError * _Nullable __autoreleasing *)error;
 
@@ -334,7 +355,7 @@ forHTTPHeaderField:(NSString *)field;
  @param headers The HTTP headers to be appended to the form data.
  @param body The data to be encoded and appended to the form data. This parameter must not be `nil`.
  */
-- (void)appendPartWithHeaders:(nullable NSDictionary <NSString *, NSString *> *)headers
+- (void)appendPartWithHeaders:(nullable NSDictionary *)headers
                          body:(NSData *)body;
 
 /**

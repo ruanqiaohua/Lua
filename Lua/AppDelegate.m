@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "wax.h"
+#import "wax_http.h"
+#import "wax_block.h"
+#import "WaxPatch-Prefix.pch"
 #import "ZipArchive.h"
 #import "ViewController.h"
 
@@ -24,7 +27,7 @@
 #ifdef USE_DYNAMICUPDATE
     
 #else
-    wax_start("init.lua", nil);
+    wax_start("init.lua",luaopen_wax_http, nil);
 #endif
     return YES;
 }

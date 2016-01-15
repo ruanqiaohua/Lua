@@ -1,7 +1,7 @@
 require "LiveRequestSongTabelViewCell"
 require "LiveChooseSongTabelViewCell"
 
-waxClass{"LiveRequestSongViewController", UIViewController, protocols = {"UITableViewDataSource", "UITableViewDelegate"}}
+waxClass{"LiveRequestSongViewController", UIViewController, protocols = {"UITableViewDataSource", "UITableViewDelegate","UITextFieldDelegate"}}
 
 function viewDidLoad(self)
 
@@ -35,11 +35,13 @@ function viewDidLoad(self)
 	self.chooseSongsTabeleView = UITableView:initWithFrame_style(CGRect(0,50,bounds.width,bounds.height-origin_Y-50-44), UITableViewStylePlain)
 	self.chooseSongsTabeleView:setDelegate(self)
 	self.chooseSongsTabeleView:setDataSource(self)
+    self.chooseSongsTabeleView:setSeparatorStyle(UITableViewCellSeparatorStyleNone)
 	self:view():addSubview(self.chooseSongsTabeleView)
 
 	self.songsTabeleView = UITableView:initWithFrame_style(CGRect(0,50,bounds.width,bounds.height-origin_Y-50-44), UITableViewStylePlain)
 	self.songsTabeleView:setDelegate(self)
 	self.songsTabeleView:setDataSource(self)
+    self.songsTabeleView:setSeparatorStyle(UITableViewCellSeparatorStyleNone)
 	self:view():addSubview(self.songsTabeleView)
 
 	self.inPutView = UIView:init()
@@ -50,6 +52,10 @@ function viewDidLoad(self)
 	self.textField = UITextField:init()
 	self.textField:setBackgroundColor(UIColor:whiteColor())
 	self.textField:setFrame(CGRect(10,5,bounds.width-50-30,34))
+    self.textField:setDelegate(self)
+    self.textField:layer():setCornerRadius(3)
+    self.textField:layer():setMasksToBounds(true)
+    self.textField:setReturnKeyType(UIReturnKeyDone)
 	self.textField:setPlaceholder("自选节目5000聊币")
 	self.inPutView:addSubview(self.textField)
 
@@ -64,7 +70,8 @@ function viewDidLoad(self)
 	self.inPutView:addSubview(self.chooseSongBtn)
 
     notificationCenter(self)
-    --requestData(self)
+    requestSongsData(self)
+    requestChooseSongsData(self)
 
 end
 
@@ -98,14 +105,56 @@ function moveInputBarWithKeyboardHeight(self,height)
     end
 end
 
---请求数据
+function textFieldShouldReturn(self,textField)
+    self:view():endEditing(true)
+end
 
-function requestData(self)
-url = "http://192.168.1.48/show/getShowList?PHPSESSID=bu2l9otoj2ntm93j65qd16phb4"
+--请求歌曲列表
+
+function requestSongsData(self)
+url = "http://192.168.1.48/show/getShowList?PHPSESSID=d1dgbfbv07nvtcr27u6i57qf71"
+local body = "uid=456"
 wax.http.request{url,method = "post",callback = function(body, response)
-puts(response:statusCode())
-puts(body)
-end}
+    if response and response:statusCode()==200 then
+        puts(body)
+        self.songs = body["data"]
+        puts(self.songs)
+--模拟数据
+        self.songs = {{id="61",showName="下雨天",showPrice="500"}}
+        puts(self.songs)
+        self.songsTabeleView:reloadData()
+    end
+end,body = body}
+end
+
+--请求已点歌曲列表
+
+function requestChooseSongsData(self)
+url = "http://192.168.1.48/show/getBuyShowList?PHPSESSID=d1dgbfbv07nvtcr27u6i57qf71"
+local body = "uid=456"
+wax.http.request{url,method = "post",callback = function(body, response)
+if response and response:statusCode()==200 then
+puts("requestChooseSongsData="..body)
+self.chooseSongs = body["data"]
+puts(self.chooseSongs)
+--模拟数据
+self.chooseSongs = {{id="10",buyUid="390",showName="1234",showPrice="5000",status="1",nickName="yh0021",createTime="7天前"}}
+puts(self.chooseSongs)
+self.chooseSongsTabeleView:reloadData()
+end
+end,body = body}
+end
+
+--点歌
+
+function buyShow(self, showType, showName, showPrice)
+url = "http://192.168.1.48/show/getBuyShowList?PHPSESSID=d1dgbfbv07nvtcr27u6i57qf71"
+local body = string.format("uid=456&showType=%s&showName=%s&showPrice=%s",showType,showName,showPrice)
+wax.http.request{url,method = "post",callback = function(body, response)
+    if response and response:statusCode()==200 then
+    puts(body)
+    end
+end,body = body}
 end
 
 function programmeSegmentValueChange(self)
@@ -125,9 +174,15 @@ end
 
 function tableView_numberOfRowsInSection(self, tableView, section)
 	if tableView == self.chooseSongsTabeleView then
-		return 3
+        if self.chooseSongs ~= nil then
+            return #self.chooseSongs
+        end
+		return 0
 	end
-	return 100
+    if self.songs ~= nil then
+        return #self.songs
+    end
+    return 0
 end
 
 function tableView_cellForRowAtIndexPath(self, tableView, indexPath)
@@ -137,19 +192,28 @@ function tableView_cellForRowAtIndexPath(self, tableView, indexPath)
 		if cell == nil then
 	    cell = LiveChooseSongTabelViewCell:initWithStyle_reuseIdentifier(UITableViewCellStyleDefault, identifier)
 		end
-		cell.songName:setText("已选歌单")
-		cell.nickname:setText("啦啦啦")
-		cell.time:setText("刚刚")
-		cell.songState:setText("已同意")
+
+        local object = self.chooseSongs[indexPath:row() + 1]
+		cell.songName:setText(object["showName"])
+		cell.nickname:setText(object["nickName"])
+		cell.time:setText(object["createTime"])
+        local status = object["status"]
+        local stateText = backStatusString(status)
+		cell.songState:setText(stateText)
+        local stateTextColor = backStatusColor(status)
+        cell.songState:setTextColor(stateTextColor)
 		return cell
 	end
 	local identifier = "cellIdentifierAboutSong"
 	local cell = tableView:dequeueReusableCellWithIdentifier(identifier)
 	if cell == nil then
 	    cell = LiveRequestSongTabelViewCell:initWithStyle_reuseIdentifier(UITableViewCellStyleDefault, identifier)
+        cell.coinImg:setImage(UIImage:imageNamed("liaobi.png"))
 	end
-	cell.songName:setText("name")
-	cell.coin:setText("5000")
+
+    local object = self.songs[indexPath:row() + 1]
+	cell.songName:setText(object["showName"])
+	cell.coin:setText(object["showPrice"])
 	return cell
 end
 
@@ -157,4 +221,30 @@ end
 
 function tableView_didSelectRowAtIndexPath(self, tableView, indexPath)
 self:view():endEditing(true)
+end
+
+function backStatusColor(status)
+    if status == "0" then
+    return UIColor:lightGrayColor()
+    end
+    if status == "1" then
+    return UIColor:redColor()
+    end
+    if status == "2" then
+    return UIColor:greenColor()
+    end
+    return UIColor:lightGrayColor()
+end
+
+function backStatusString(status)
+    if status == "0" then
+    return "已拒绝"
+    end
+    if status == "1" then
+    return "未处理"
+    end
+    if status == "2" then
+    return "已同意"
+    end
+    return ""
 end

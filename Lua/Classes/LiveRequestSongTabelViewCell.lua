@@ -15,7 +15,6 @@ if self then
 
     self.coinImg = UIImageView:init()
     self.coinImg:setFrame(CGRect(bounds.width-70-50-25,12,20,20))
-    self.coinImg:setBackgroundColor(UIColor:greenColor())
     self:contentView():addSubview(self.coinImg)
 
 	self.coin = UILabel:init()
@@ -32,6 +31,11 @@ if self then
 	self.chooseSong:setTitleColor_forState(UIColor:whiteColor(),UIControlStateNormal)
 	self.chooseSong:addTarget_action_forControlEvents(self,"chooseSongButtonDidClick",UIControlEventTouchUpInside)
 	self:contentView():addSubview(self.chooseSong)
+
+    local lightGrayView = UIView:initWithFrame(CGRect(0,43.5,bounds.width,0.5))
+    lightGrayView:setBackgroundColor(UIColor:lightGrayColor())
+    self:contentView():addSubview(lightGrayView)
+
 end
 
 return self
